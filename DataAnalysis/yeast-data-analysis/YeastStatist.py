@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import turtle
 
 def getYeastAreas():
-    #df = pd.read_table("D:\python-study\DataAnalysis\data\mf4257-ftl.csv")
+    df = pd.read_table("D:\python-study\DataAnalysis\data\mf4257-ftl.csv")
     pd.set_option('display.max_columns', None)
     # 显示所有行
     pd.set_option('display.max_rows', None)
 
-    df = pd.read_table("D:\\python-study\\DataAnalysis\\data\\new-covered.csv")
+    #df = pd.read_table("D:\\python-study\\DataAnalysis\\data\\new-covered.csv")
     #print(df.loc[1])
 
 
@@ -20,7 +20,7 @@ def getYeastAreas():
     #     print(key)
     #     print(value)
     classify = df.groupby(by = ['chrName'])
-    L1 = [[0 for _ in range (7)] for _ in range (17)]
+    L1 = [[0 for _ in range (8)] for _ in range (17)]
     L2 = [[0 for _ in range (10)] for _ in range (17)]
     i = 0
     for key,value in classify:
@@ -33,6 +33,7 @@ def getYeastAreas():
         qu = value["length"].quantile(q=0.75)
         sk = value["length"].skew() #偏态系数
         md = value["rank"].mode() #众数
+        sum = value["length"].sum()
         #print(max,min,median,sk,sep=' ')
         #print(i)
         L1[i][0] = max
@@ -42,12 +43,13 @@ def getYeastAreas():
         L1[i][4] = qu
         L1[i][5] = sk
         L1[i][6] = md
+        L1[i][7] = sum
         #print(i)
         #print(L1[i][0], L1[i][1], L1[i][2], L1[i][3], sep=' ')
         i = i+1
 
     for a in L1:
-         print(a[0],a[1],'%.3f'%a[2],a[3],'%.3f'%a[5],sep='  ')
+         print(a[0],a[1],'%.3f'%a[2],a[3],'%.3f'%a[5],a[7],sep='  ')
          #print(a[5])
         #print(a[0],a[1],a[2],a[3],sep=' ' )
 
@@ -63,7 +65,7 @@ def getYeastAreas():
             j = j+1
             k = 0
 
-    creatAreadistribution(L2)
+  #  creatAreadistribution(L2)
 
 
     # for i in L2:
