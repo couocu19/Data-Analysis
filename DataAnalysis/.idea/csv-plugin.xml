@@ -24,7 +24,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\data\mf4257-new-ftl.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\data\new-covered.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\s4257-on-window-old.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\s4257-on-window.csv">
           <value>
             <Attribute>
               <option name="separator" value="&#9;" />
